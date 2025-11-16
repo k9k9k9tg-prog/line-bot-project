@@ -1,5 +1,16 @@
-/app/.env
+# Python
 __pycache__/
 *.pyc
-.DS_Store
+
+# Flask / env
 .env
+
+# VS Code
+.vscode/
+
+# OS / WSL
+.DS_Store
+*.log
+
+# Docker
+*.db
