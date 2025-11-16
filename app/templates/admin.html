@@ -2,34 +2,43 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>LINE管理画面</title>
+<title>管理画面</title>
 <link rel="stylesheet" href="/static/style.css">
-<script src="/static/script.js" defer></script>
 </head>
 <body>
-<div class="container">
-    <div class="sidebar">
-        <h3>ユーザー</h3>
-        <select id="user-select" style="width:100%">
-            {% for uid, info in user_list.items() %}
-            <option value="{{ uid }}">{{ info.name }}</option>
-            {% endfor %}
-        </select>
-    </div>
+<header>
+  <h1>管理画面</h1>
+  <a href="/editor" class="btn">シナリオエディタ</a>
+</header>
 
-    <div class="chat-container">
-        <div id="chat"></div>
-        <div id="send-box">
-            <input type="text" id="message-input" placeholder="メッセージを入力">
-            <button id="send-btn">送信</button>
-        </div>
-    </div>
-</div>
+<section>
+  <div class="scenario-select">
+    <label>現在のシナリオ:</label>
+    <select id="scenario-dropdown">
+      {% for name in scenarios.keys() %}
+      <option value="{{ name }}" {% if name==current_scenario %}selected{% endif %}>{{ name }}</option>
+      {% endfor %}
+    </select>
+    <button id="set-scenario">適用</button>
+  </div>
+
+  <div id="chat" class="chat-box"></div>
+
+  <div class="send-box">
+    <select id="user-select">
+      {% for uid, u in user_list.items() %}
+      <option value="{{ uid }}">{{ u.name }}</option>
+      {% endfor %}
+    </select>
+    <input type="text" id="message-input" placeholder="メッセージ入力">
+    <button id="send-btn">送信</button>
+  </div>
+</section>
 
 <script>
-    // Python側のuser_listをwindowに渡す
-    window.userList = {{ user_list|tojson|safe }};
+window.userList = {{ user_list|tojson }};
+window.currentScenario = "{{ current_scenario }}";
 </script>
-
+<script src="/static/script.js"></script>
 </body>
 </html>

@@ -1,18 +1,19 @@
+// ====== script.js ======
 let lastNotifyTimestamp = 0;
 const audio = new Audio("/static/notify.mp3");
 
-// DOM読み込み後
+// ページ読み込み後
 document.addEventListener("DOMContentLoaded", () => {
     // 通知許可
-    if ("Notification" in window) {
-        if (Notification.permission === "default") {
-            Notification.requestPermission();
-        }
+    if ("Notification" in window && Notification.permission === "default") {
+        Notification.requestPermission();
     }
+
+    // 初回メッセージ取得
     refreshMessages(true);
     setInterval(() => refreshMessages(false), 2000);
 
-    // 送信ボタン
+    // メッセージ送信
     const sendBtn = document.getElementById("send-btn");
     sendBtn.addEventListener("click", () => {
         const userId = document.getElementById("user-select").value;
@@ -31,72 +32,79 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// メッセージ取得・描画
+// メッセージ取得・チャット更新
 function refreshMessages(fullNotify = false) {
     fetch("/messages")
-    .then(res => res.json())
-    .then(data => {
-        const chat = document.getElementById("chat");
-        if (!chat) return;
-        chat.innerHTML = "";
+        .then(res => res.json())
+        .then(data => {
+            const chat = document.getElementById("chat");
+            if (!chat) return;
+            chat.innerHTML = "";
 
-        data.forEach(m => {
-            const container = document.createElement("div");
-            container.className = "bubble-container";
+            data.forEach(m => {
+                const container = document.createElement("div");
+                container.className = "bubble-container";
 
-            const bubble = document.createElement("div");
-            bubble.className = "bubble";
+                const bubble = document.createElement("div");
+                bubble.className = "bubble";
 
-            // 左右判定
-            if (m.type === "incoming" || m.type === "notify") {
-                container.classList.add("left");   // ユーザー・通知は左
-            } else if (m.type === "outgoing" || m.type === "auto") {
-                container.classList.add("right");  // 自分・シナリオ返信は右
-            }
+                // 左右判定
+                if (m.type === "incoming") {
+                    container.classList.add("left");
+                } else if (m.type === "auto") {
+                    container.classList.add("right");
+                } else if (m.type === "outgoing") {
+                    container.classList.add("right");
+                } else if (m.type === "notify") {
+                    container.classList.add("center");
+                }
 
-            // アイコン
-            const img = document.createElement("img");
-            img.className = "avatar";
-            if (container.classList.contains("left")) {
-                img.src = (m.user_id in window.userList) ? window.userList[m.user_id].picture || "/static/default-avatar.png" : "/static/default-avatar.png";
-                container.appendChild(img); // 左はアイコンを左に
-            }
+                // アイコン
+                const img = document.createElement("img");
+                img.className = "avatar";
+                if (m.type === "incoming") {
+                    img.src = window.userList[m.user_id]?.picture || "/static/default-avatar.png";
+                } else if (m.type === "auto") {
+                    img.src = "/static/bot-avatar.png";
+                } else if (m.type === "outgoing") {
+                    img.src = "/static/default-avatar.png";
+                } else {
+                    img.style.display = "none"; // notifyはアイコンなし
+                }
+                container.appendChild(img);
 
-            // 名前
-            const nameSpan = document.createElement("span");
-            nameSpan.className = "name";
-            if (m.type === "outgoing" || m.type === "auto") nameSpan.textContent = "あなた";
-            else if (m.type === "notify") nameSpan.textContent = "通知";
-            else if (m.user_id in window.userList) nameSpan.textContent = window.userList[m.user_id].name;
-            else nameSpan.textContent = m.user_id;
-            bubble.appendChild(nameSpan);
+                // 名前
+                const nameSpan = document.createElement("span");
+                nameSpan.className = "name";
+                if (m.type === "incoming") {
+                    nameSpan.textContent = window.userList[m.user_id]?.name || m.user_id;
+                } else if (m.type === "auto") {
+                    nameSpan.textContent = "チャットボット";
+                } else if (m.type === "outgoing") {
+                    nameSpan.textContent = "あなた";
+                } else if (m.type === "notify") {
+                    nameSpan.textContent = "通知";
+                }
+                bubble.appendChild(nameSpan);
 
-            // メッセージテキスト
-            const textSpan = document.createElement("span");
-            textSpan.textContent = m.text;
-            bubble.appendChild(textSpan);
+                // メッセージ本文
+                const textSpan = document.createElement("span");
+                textSpan.textContent = m.text;
+                bubble.appendChild(textSpan);
 
-            container.appendChild(bubble);
+                container.appendChild(bubble);
+                chat.appendChild(container);
 
-            // 右側のアイコン（自分・シナリオ）
-            if (container.classList.contains("right")) {
-                const rightImg = document.createElement("img");
-                rightImg.className = "avatar";
-                rightImg.src = "/static/default-avatar.png";
-                container.appendChild(rightImg);
-            }
+                // 通知
+                if (m.type === "notify" && (fullNotify || m.timestamp > lastNotifyTimestamp)) {
+                    showNotification(m.text);
+                    lastNotifyTimestamp = m.timestamp;
+                }
+            });
 
-            chat.appendChild(container);
-
-            // 通知
-            if (m.type === "notify" && (fullNotify || m.timestamp > lastNotifyTimestamp)) {
-                showNotification(m.text);
-                lastNotifyTimestamp = m.timestamp;
-            }
-        });
-
-        chat.scrollTop = chat.scrollHeight;
-    });
+            chat.scrollTop = chat.scrollHeight;
+        })
+        .catch(err => console.log("メッセージ取得エラー:", err));
 }
 
 // Notification API

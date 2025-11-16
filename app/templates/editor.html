@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>シナリオエディタ</title>
+<link rel="stylesheet" href="/static/editor.css">
+</head>
+<body>
+<header>
+  <h1>シナリオエディタ</h1>
+  <a href="/admin" class="btn">管理画面へ戻る</a>
+</header>
+
+<section>
+  <div>
+    <label>シナリオ選択:</label>
+    <select id="scenario-select"></select>
+    <button id="add-scenario">新規作成</button>
+    <button id="save-scenario">保存</button>
+  </div>
+  <ul id="scenario-list"></ul>
+</section>
+
+<script>
+let scenarios = {};
+let currentScenario = "";
+
+function refreshScenarioList(){
+  const ul = document.getElementById("scenario-list");
+  ul.innerHTML = "";
+  const name = document.getElementById("scenario-select").value;
+  const arr = scenarios[name] || [];
+  arr.forEach((text,i)=>{
+    const li = document.createElement("li");
+    li.innerHTML = `<input type="text" value="${text}"> <button onclick="removeLine(${i})">削除</button>`;
+    ul.appendChild(li);
+  });
+  currentScenario = name;
+}
+
+function removeLine(i){
+  scenarios[currentScenario].splice(i,1);
+  refreshScenarioList();
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+  fetch("/get_scenarios").then(r=>r.json()).then(data=>{
+    scenarios = data;
+    const select = document.getElementById("scenario-select");
+    select.innerHTML = "";
+    Object.keys(scenarios).forEach(name=>{
+      const opt = document.createElement("option");
+      opt.value = name; opt.textContent=name;
+      select.appendChild(opt);
+    });
+    refreshScenarioList();
+  });
+
+  document.getElementById("scenario-select").addEventListener("change",refreshScenarioList);
+
+  document.getElementById("add-scenario").addEventListener("click",()=>{
+    const name = prompt("新しいシナリオ名を入力:");
+    if(!name) return;
+    scenarios[name]=["最初の発言"];
+    const select = document.getElementById("scenario-select");
+    const opt = document.createElement("option");
+    opt.value=name; opt.textContent=name;
+    select.appendChild(opt);
+    select.value=name;
+    refreshScenarioList();
+  });
+
+  document.getElementById("save-scenario").addEventListener("click",()=>{
+    const inputs = document.querySelectorAll("#scenario-list input");
+    scenarios[currentScenario]=Array.from(inputs).map(input=>input.value);
+    fetch("/save_scenarios",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(scenarios)})
+    .then(r=>r.json()).then(d=>{if(d.status==="ok") alert("保存しました")});
+  });
+});
+</script>
+</body>
+</html>

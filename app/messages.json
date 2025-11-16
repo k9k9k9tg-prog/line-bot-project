@@ -316,5 +316,41 @@
     "text": "aaa",
     "type": "outgoing",
     "timestamp": 1763311946
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "か",
+    "type": "incoming",
+    "timestamp": 1763317644
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "こんにちは！まずはお名前を教えてください。",
+    "type": "auto",
+    "timestamp": 1763317644
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "こんな",
+    "type": "incoming",
+    "timestamp": 1763317655
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "今日はどんなご用件でしょうか？",
+    "type": "auto",
+    "timestamp": 1763317655
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "あ",
+    "type": "incoming",
+    "timestamp": 1763317959
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "こんつあ",
+    "type": "auto",
+    "timestamp": 1763317960
   }
 ]
