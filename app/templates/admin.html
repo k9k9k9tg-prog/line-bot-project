@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>LINE管理画面</title>
+<link rel="stylesheet" href="/static/style.css">
+<script src="/static/script.js" defer></script>
+</head>
+<body>
+<div class="container">
+    <div class="sidebar">
+        <h3>ユーザー</h3>
+        <select id="user-select" style="width:100%">
+            {% for uid, info in user_list.items() %}
+            <option value="{{ uid }}">{{ info.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="chat-container">
+        <div id="chat"></div>
+        <div id="send-box">
+            <input type="text" id="message-input" placeholder="メッセージを入力">
+            <button id="send-btn">送信</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Python側のuser_listをwindowに渡す
+    window.userList = {{ user_list|tojson|safe }};
+</script>
+
+</body>
+</html>

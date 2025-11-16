@@ -1,0 +1,320 @@
+[
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "テスト",
+    "type": "incoming",
+    "timestamp": 1763303114
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "こんにた",
+    "type": "outgoing",
+    "timestamp": 1763303125
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "にーは俺",
+    "type": "incoming",
+    "timestamp": 1763303131
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "こんちゃー",
+    "type": "incoming",
+    "timestamp": 1763303286
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "紺チャー",
+    "type": "outgoing",
+    "timestamp": 1763303299
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "にょっそ",
+    "type": "outgoing",
+    "timestamp": 1763303653
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "あつし",
+    "type": "outgoing",
+    "timestamp": 1763303764
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "あ",
+    "type": "incoming",
+    "timestamp": 1763303864
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "こんにちは！まずはお名前を教えてください。",
+    "type": "auto",
+    "timestamp": 1763304441
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "今日はどんなご用件でしょうか？",
+    "type": "auto",
+    "timestamp": 1763304444
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "詳しくお聞きしてもよろしいですか？",
+    "type": "auto",
+    "timestamp": 1763304449
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "ありがとうございます。確認します。",
+    "type": "auto",
+    "timestamp": 1763304460
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "こんにちは！まずはお名前を教えてください。",
+    "type": "auto",
+    "timestamp": 1763304831
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "あ",
+    "type": "incoming",
+    "timestamp": 1763304985
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "こんにちは！まずはお名前を教えてください。",
+    "type": "auto",
+    "timestamp": 1763304985
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "石田",
+    "type": "incoming",
+    "timestamp": 1763304993
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "今日はどんなご用件でしょうか？",
+    "type": "auto",
+    "timestamp": 1763304993
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "テスト",
+    "type": "incoming",
+    "timestamp": 1763305003
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "詳しくお聞きしてもよろしいですか？",
+    "type": "auto",
+    "timestamp": 1763305003
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "LINE",
+    "type": "incoming",
+    "timestamp": 1763305010
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "ありがとうございます。確認します。",
+    "type": "auto",
+    "timestamp": 1763305010
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "こんにちはー",
+    "type": "incoming",
+    "timestamp": 1763306695
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "こんにちは！まずはお名前を教えてください。",
+    "type": "auto",
+    "timestamp": 1763306696
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "あ",
+    "type": "incoming",
+    "timestamp": 1763307197
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "今日はどんなご用件でしょうか？",
+    "type": "auto",
+    "timestamp": 1763307198
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "こんにちは",
+    "type": "incoming",
+    "timestamp": 1763307208
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "詳しくお聞きしてもよろしいですか？",
+    "type": "auto",
+    "timestamp": 1763307208
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "あ",
+    "type": "incoming",
+    "timestamp": 1763307210
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "ありがとうございます。確認します。",
+    "type": "auto",
+    "timestamp": 1763307210
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "あ",
+    "type": "incoming",
+    "timestamp": 1763307214
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "すべてのステップが終了しました。オペレーターに接続します。",
+    "type": "auto",
+    "timestamp": 1763307214
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "あ",
+    "type": "incoming",
+    "timestamp": 1763307404
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "こんにちは",
+    "type": "incoming",
+    "timestamp": 1763307414
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "やっほー",
+    "type": "outgoing",
+    "timestamp": 1763307424
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "がぞう",
+    "type": "incoming",
+    "timestamp": 1763308244
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "こんにちは！まずはお名前を教えてください。",
+    "type": "auto",
+    "timestamp": 1763308244
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "あいう",
+    "type": "incoming",
+    "timestamp": 1763309301
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "こんにちは！まずはお名前を教えてください。",
+    "type": "auto",
+    "timestamp": 1763309301
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "あ",
+    "type": "incoming",
+    "timestamp": 1763309752
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "今日はどんなご用件でしょうか？",
+    "type": "auto",
+    "timestamp": 1763309752
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "あいうえぽ",
+    "type": "outgoing",
+    "timestamp": 1763310681
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "あ",
+    "type": "incoming",
+    "timestamp": 1763311250
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "こんにちは！まずはお名前を教えてください。",
+    "type": "auto",
+    "timestamp": 1763311250
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "あ",
+    "type": "incoming",
+    "timestamp": 1763311260
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "今日はどんなご用件でしょうか？",
+    "type": "auto",
+    "timestamp": 1763311260
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "あ",
+    "type": "incoming",
+    "timestamp": 1763311261
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "詳しくお聞きしてもよろしいですか？",
+    "type": "auto",
+    "timestamp": 1763311262
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "あ",
+    "type": "incoming",
+    "timestamp": 1763311266
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "ありがとうございます。確認します。",
+    "type": "auto",
+    "timestamp": 1763311266
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "あいう",
+    "type": "incoming",
+    "timestamp": 1763311911
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "こんにちは！まずはお名前を教えてください。",
+    "type": "auto",
+    "timestamp": 1763311911
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "aaa",
+    "type": "outgoing",
+    "timestamp": 1763311940
+  },
+  {
+    "user_id": "U19630d6c833d3de20c74babf8c3e7122",
+    "text": "aaa",
+    "type": "outgoing",
+    "timestamp": 1763311946
+  }
+]
